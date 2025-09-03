@@ -31,6 +31,16 @@ class AdminPanelProvider extends PanelProvider
                 'primary' => Color::Amber,
             ])
             ->viteTheme('resources/css/filament/admin/theme.css')
+            ->plugins([
+            \Awcodes\Curator\CuratorPlugin::make()
+                ->label('Media')
+                ->pluralLabel('Media')
+                ->navigationIcon('heroicon-o-photo')
+                ->navigationGroup('Content')
+                ->navigationSort(3)
+                ->navigationCountBadge()
+                ->defaultListView('grid' || 'list')
+             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
