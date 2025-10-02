@@ -1,24 +1,50 @@
-*.log
-.DS_Store
+# Laravel / PHP
+/vendor/
+/bootstrap/cache/
+/storage/*.key
+/storage/app/public
+/storage/framework/*
+!/storage/framework/.gitignore
+/storage/logs/*
+!/storage/logs/.gitignore
+
+# Laravel specific
 .env
-.env.backup
-.env.production
-.phpactor.json
+.env.*.local
 .phpunit.result.cache
-/.fleet
-/.idea
-/.nova
-/.phpunit.cache
-/.vscode
-/.zed
-/auth.json
-/node_modules
+Homestead.yaml
+Homestead.json
+
+# Livewire temporary files
+/storage/framework/livewire-tmp
+
+# NPM / Node
+/node_modules/
+/npm-debug.log
+/yarn-error.log
+/pnpm-debug.log
+
+# Build / Vite
 /public/build
 /public/hot
 /public/storage
-/storage/*.key
-/storage/pail
-/vendor
-Homestead.json
-Homestead.yaml
+
+# IDE & OS junk
+/.idea
+/.vscode
+/.DS_Store
 Thumbs.db
+
+# Composer
+composer.lock
+
+# Coverage / Testing
+coverage/
+.phpunit.cache
+
+# Logs
+*.log
+
+# Other
+*.swp
+*.swo
