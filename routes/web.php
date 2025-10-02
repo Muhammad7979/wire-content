@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\AuthCallbackController;
+use App\Http\Controllers\AuthRedirectController;
+use App\Livewire\Pages\Article;
 use App\Livewire\Pages\Home;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', Home::class);
+Route::get('/', Home::class)->name('home');
+Route::get('/article/{article:slug}', Article::class)->name('article.show');
 
 Route::middleware([
     'auth:sanctum',
@@ -13,4 +17,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+});
+
+Route::middleware('guest')->group(function(){
+    Route::get('/auth/redirect/{service}',AuthRedirectController::class)->name('auth.redirect');
+    Route::get('/auth/callback/{service}',AuthCallbackController::class)->name('auth.callback');
 });

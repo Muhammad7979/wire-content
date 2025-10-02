@@ -16,18 +16,13 @@
     </div>
   </div>
   <div class="navbar-center">
-    <a class="btn btn-ghost text-xl">{{config('app.name')}}</a>
+    <a href="{{ route('home') }}" wire:navigate class="btn btn-ghost text-xl">{{config('app.name')}}</a>
   </div>
   <div class="navbar-end">
-    <button class="btn btn-ghost btn-circle">
-        <x-mary-icon name="heroicon.m.magnifying.glass" />
-    </button>
-    <button class="btn btn-ghost btn-circle">
-      <div class="indicator">
-      <x-mary-icon name="heroicon.s.bell" />
-      <span class="badge badge-xs badge-primary indicator-item"></span>
-      </div>
-    </button>
+@guest
+   <a href="{{ route('login') }}" wire:navigate class="btn btn-primary">Login</a>
+   <a href="{{ route('register') }}" wire:navigate class="btn btn-secondary">Register</a>
+@endguest
   </div>
 </div>
 </div>
