@@ -3,6 +3,8 @@
 /bootstrap/cache/
 /storage/*.key
 /storage/app/public
+/storage/app/private
+/storage/app/.cache
 /storage/framework/*
 !/storage/framework/.gitignore
 /storage/logs/*
